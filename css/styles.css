@@ -1392,22 +1392,20 @@ footer {
   .hero-copy {
     left: 20px;
     right: 20px;
-    top: 38%;
-    bottom: auto;
+    bottom: 40px;
+    top: auto;
     max-width: none;
   }
+  .hero-eyebrow { display: none; }
   .hero-mono, .hero-meta, .hero-bottom-right { display: none; }
   .hero-bg { background-position: center 75%; }
   .hero-video {
     background: linear-gradient(
       180deg,
-      rgba(0,0,0,0.4) 0%,
-      transparent 14%,
-      rgba(0,0,0,0.45) 34%,
-      rgba(0,0,0,0.7) 55%,
-      rgba(0,0,0,0.35) 75%,
-      transparent 92%,
-      transparent 100%
+      transparent 0%,
+      transparent 50%,
+      rgba(0,0,0,0.35) 72%,
+      rgba(0,0,0,0.55) 100%
     );
   }
   .section-head, .project, .credentials, .services, footer { padding-left: 20px; padding-right: 20px; }
