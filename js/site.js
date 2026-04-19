@@ -593,6 +593,7 @@ const HEADLINES = {
 function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builders · Since 2007' }) {
   return (
     <section className="hero" id="top" data-screen-label="01 Hero">
+      <div className="hero-bg" />
       <div className="hero-video" />
       <div className="hero-video-tag">
         <span className="rec" />
