@@ -1537,7 +1537,8 @@ footer {
     color: rgba(241,236,227,0.7);
     margin-bottom: 16px;
   }
-  .footer-contact-line { display: none; }
+  .footer-contact-line { display: block; font-size: 11px; margin-bottom: 16px; }
+  .footer-contact-details { display: none; }
   .footer-col { border-top: 1px solid rgba(241,236,227,0.18); padding-top: 14px; }
   .footer-col-head { margin-bottom: 10px; font-size: 9px; }
   .footer-col ul li { font-size: 12px; line-height: 1.85; }

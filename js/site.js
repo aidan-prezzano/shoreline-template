@@ -666,9 +666,11 @@ function Footer() {
             Quiet, considered pools for homeowners who notice the difference.
           </p>
           <div className="footer-contact-line">
-            Studio &nbsp;·&nbsp; 1424 Camelback Rd, Paradise Valley AZ<br/>
-            <a href="tel:+14805550100">+1 480 555 0100</a><br/>
-            <a href="mailto:studio@shoreline-pools.co">studio@shoreline-pools.co</a>
+            <span className="footer-address">Studio &nbsp;·&nbsp; 1424 Camelback Rd, Paradise Valley AZ</span>
+            <span className="footer-contact-details">
+              <br/><a href="tel:+14805550100">+1 480 555 0100</a>
+              <br/><a href="mailto:studio@shoreline-pools.co">studio@shoreline-pools.co</a>
+            </span>
           </div>
         </div>
         <div className="footer-col">
