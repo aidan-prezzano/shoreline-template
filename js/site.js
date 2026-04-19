@@ -248,25 +248,21 @@ function ProjectSidebar({ p, total }) {
 function ProjectOverlay({ p, total }) {
   return (
     <article className="project variant-overlay">
-      <div className="project-frame reveal" style={{ position: 'relative' }}>
+      <div className="project-frame reveal">
         <Parallax speed={0.12}>
           <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center top' } : {}}>
             <div className="ph-label">{p.phLabel}</div>
-            <div style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%)',
-              pointerEvents: 'none',
-            }} />
           </div>
         </Parallax>
-        <div className="project-overlay-title">
-          {p.name}
-          <span className="loc">{p.location}</span>
-        </div>
       </div>
       <div className="project-caption" style={{ gridTemplateColumns: '180px 1fr 300px' }}>
         <div className="no reveal">{p.no} / {String(total).padStart(3, '0')}</div>
-        <div />
+        <div className="reveal">
+          <h3 className="project-name">
+            {p.name}
+            <span className="loc">{p.location}</span>
+          </h3>
+        </div>
         <div className="project-desc reveal">
           {p.desc}
           <span className="meta">{p.meta}</span>
