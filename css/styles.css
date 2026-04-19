@@ -1422,6 +1422,7 @@ footer {
     padding: 0;
     max-width: 100%;
   }
+  .project.variant-asymmetric .project-caption > div:nth-child(2) { grid-column: 1; }
   .project.variant-asymmetric .project-caption .project-desc { grid-column: 1; padding-top: 0; }
 
   /* Project overlay — override inline gridTemplateColumns style */

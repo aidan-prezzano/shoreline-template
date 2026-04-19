@@ -294,7 +294,7 @@ function ProjectAsymmetric({ p, total }) {
             <span className="loc">{p.location}</span>
           </h3>
         </div>
-        <div className="project-desc reveal" style={{ gridColumn: '2' }}>
+        <div className="project-desc reveal">
           {p.desc}
           <span className="meta">{p.meta}</span>
         </div>
