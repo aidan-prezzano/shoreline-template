@@ -387,7 +387,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1554718627-19b43b14304a?w=1920&q=82&auto=format&fit=crop') center 60%/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?w=1920&q=82&auto=format&fit=crop') center 65%/cover no-repeat;
   z-index: 0;
 }
 
@@ -396,69 +396,8 @@ body {
   inset: 0;
   width: 100%; height: 100%;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(5,12,14,0.18) 0%, rgba(5,12,14,0.08) 35%, rgba(5,12,14,0.5) 62%, rgba(5,12,14,0.82) 100%);
-  animation: hero-breathe 18s ease-in-out infinite alternate;
+  background: linear-gradient(180deg, transparent 0%, transparent 58%, rgba(0,0,0,0.4) 100%);
   z-index: 1;
-}
-
-/* Caustic layer 1 — horizontal bands that drift */
-.hero-video::before {
-  content: '';
-  position: absolute;
-  inset: -20%;
-  background-image:
-    repeating-linear-gradient(
-      96deg,
-      transparent 0px,
-      transparent 40px,
-      rgba(255, 255, 255, 0.02) 40px,
-      rgba(255, 255, 255, 0.045) 42px,
-      rgba(255, 255, 255, 0.02) 44px,
-      transparent 48px,
-      transparent 110px
-    ),
-    repeating-linear-gradient(
-      84deg,
-      transparent 0px,
-      transparent 70px,
-      rgba(255, 255, 255, 0.015) 70px,
-      rgba(255, 255, 255, 0.035) 72px,
-      rgba(255, 255, 255, 0.015) 74px,
-      transparent 80px,
-      transparent 180px
-    );
-  animation: caustics 22s linear infinite;
-  mix-blend-mode: screen;
-  filter: blur(1px);
-}
-
-/* Caustic layer 2 — slow shimmer highlights */
-.hero-video::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 40% 20% at 30% 55%, rgba(255,255,255,0.1) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 15% at 70% 48%, rgba(255,255,255,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 25% 12% at 50% 62%, rgba(255,255,255,0.06) 0%, transparent 60%),
-    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 22%, transparent 68%, rgba(0,0,0,0.55) 100%);
-  animation: shimmer 11s ease-in-out infinite alternate;
-  mix-blend-mode: screen;
-}
-
-@keyframes hero-breathe {
-  from { transform: scale(1.02); filter: brightness(0.95); }
-  to { transform: scale(1.08); filter: brightness(1.08); }
-}
-@keyframes shimmer {
-  0% { opacity: 0.55; transform: translate3d(-1%, 0, 0); }
-  50% { opacity: 0.85; transform: translate3d(1%, -0.5%, 0); }
-  100% { opacity: 0.6; transform: translate3d(-0.5%, 0.5%, 0); }
-}
-@keyframes caustics {
-  from { transform: translate3d(0, 0, 0); }
-  to { transform: translate3d(-180px, -40px, 0); }
 }
 
 /* Intentional placeholder frame — hidden unless [data-show-placeholder] is set on body */
@@ -1445,7 +1384,7 @@ footer {
   .nav-hamburger { display: flex; }
   .hero-copy { left: 20px; bottom: 40px; }
   .hero-mono, .hero-meta, .hero-bottom-right { display: none; }
-  .hero-bg { background-position: center 55%; }
+  .hero-bg { background-position: center 70%; }
   .section-head, .project, .credentials, .services, footer { padding-left: 20px; padding-right: 20px; }
   .section-head { grid-template-columns: 1fr; gap: 24px; }
   .project-caption { grid-template-columns: 1fr; gap: 20px; }
