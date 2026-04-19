@@ -655,9 +655,15 @@ function Footer() {
     <footer data-screen-label="Footer">
       <div className="footer-top">
         <div className="footer-brand">
-          <div className="logo">SHORELINE</div>
+          <div className="footer-brand-row">
+            <div className="logo">SHORELINE</div>
+            <a href="tel:+14805550100" className="footer-mobile-phone">+1 480 555 0100</a>
+          </div>
           <p className="footer-tag">
             Quiet, considered pools for homeowners who notice the difference — built across the Southwest since 2007.
+          </p>
+          <p className="footer-tag-short">
+            Quiet, considered pools for homeowners who notice the difference.
           </p>
           <div className="footer-contact-line">
             Studio &nbsp;·&nbsp; 1424 Camelback Rd, Paradise Valley AZ<br/>
@@ -683,11 +689,11 @@ function Footer() {
             <li><a href="#process">Process</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#">Journal</a></li>
-            <li><a href="#">Careers</a></li>
+            <li className="footer-dsk"><a href="#">Journal</a></li>
+            <li className="footer-dsk"><a href="#">Careers</a></li>
           </ul>
         </div>
-        <div className="footer-col">
+        <div className="footer-col footer-dsk">
           <div className="footer-col-head">Inquire</div>
           <ul>
             <li><a href="#">Design brief</a></li>
@@ -703,13 +709,16 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <div>© 2026 Shoreline Pools, LLC &nbsp;·&nbsp; ROC #284592 &nbsp;·&nbsp; CSLB #1054721</div>
+        <div>
+          <span>© 2026 Shoreline Pools, LLC</span>
+          <span className="footer-dsk">&nbsp;·&nbsp; ROC #284592 &nbsp;·&nbsp; CSLB #1054721</span>
+        </div>
         <div className="footer-credentials">
           <span>Licensed · Bonded · Insured</span>
-          <span>APSP Gold</span>
-          <span>AIA Collaborative</span>
+          <span className="footer-dsk">APSP Gold</span>
+          <span className="footer-dsk">AIA Collaborative</span>
         </div>
-        <div>
+        <div className="footer-dsk">
           <a href="#" style={{ color: 'inherit', textDecoration: 'none', marginRight: 20 }}>Privacy</a>
           <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Terms</a>
         </div>

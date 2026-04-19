@@ -1208,6 +1208,10 @@ footer {
   padding-bottom: 80px;
   border-bottom: 1px solid rgba(241,236,227,0.18);
 }
+.footer-brand-row { display: block; }
+.footer-mobile-phone { display: none; }
+.footer-tag-short { display: none; }
+
 .footer-brand .logo {
   color: var(--inverse-ink);
   margin-bottom: 24px;
@@ -1498,6 +1502,45 @@ footer {
   .quiz-banner { padding: 72px 20px; }
   .quiz-banner h2 { font-size: clamp(26px, 7vw, 36px); }
 
-  /* Footer */
-  footer { padding-top: 60px; padding-bottom: 28px; }
+  /* Footer — full mobile restructure */
+  footer { padding: 24px 20px 16px; }
+  .footer-dsk { display: none !important; }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(241,236,227,0.18);
+  }
+  .footer-brand { grid-column: 1 / -1; margin-bottom: 0; }
+  .footer-brand-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .footer-brand .logo { font-size: 17px; margin-bottom: 0; }
+  .footer-mobile-phone {
+    display: inline;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: rgba(241,236,227,0.65);
+    text-decoration: none;
+  }
+  .footer-tag { display: none; }
+  .footer-tag-short {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+    color: rgba(241,236,227,0.7);
+    margin-bottom: 16px;
+  }
+  .footer-contact-line { display: none; }
+  .footer-col { border-top: 1px solid rgba(241,236,227,0.18); padding-top: 14px; }
+  .footer-col-head { margin-bottom: 10px; font-size: 9px; }
+  .footer-col ul li { font-size: 12px; line-height: 1.85; }
+  .footer-bottom { padding-top: 14px; gap: 8px; }
+  .footer-credentials { gap: 0; font-size: 9.5px; letter-spacing: 0.15em; }
 }
