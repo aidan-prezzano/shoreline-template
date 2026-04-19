@@ -328,7 +328,7 @@ body {
   top: 0; left: 0; right: 0; bottom: 0;
   background: var(--bg);
   padding: 100px 24px 48px;
-  z-index: 98;
+  z-index: 110;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -345,14 +345,14 @@ body {
 }
 .nav-mobile-close {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 20px;
+  right: 16px;
   display: flex;
   align-items: center;
   gap: 10px;
   background: transparent;
   border: none;
-  padding: 8px 4px;
+  padding: 8px 12px;
   cursor: pointer;
   color: var(--ink);
   font-family: 'Inter', sans-serif;
@@ -786,15 +786,41 @@ section {
   background: transparent;
   border: none;
   color: var(--mute);
+  opacity: 0.55;
   cursor: pointer;
   padding: 4px 0;
   text-align: left;
   font: inherit;
   letter-spacing: inherit;
   text-transform: inherit;
-  transition: color 300ms;
+  transition: color 300ms, opacity 300ms;
+  position: relative;
+  padding-left: 20px;
 }
-.t-nav button.active { color: var(--ink); }
+.t-nav button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 12px;
+  height: 1px;
+  background: currentColor;
+  transform: translateY(-50%) scaleX(0.4);
+  transform-origin: left;
+  transition: transform 300ms, opacity 300ms;
+  opacity: 0.5;
+}
+.t-nav button:hover { opacity: 0.9; }
+.t-nav button:hover::before { transform: translateY(-50%) scaleX(1); opacity: 1; }
+.t-nav button.active {
+  color: var(--ink);
+  opacity: 1;
+}
+.t-nav button.active::before {
+  transform: translateY(-50%) scaleX(1);
+  opacity: 1;
+  background: var(--ink);
+}
 
 .testimonial-slide {
   position: relative;
