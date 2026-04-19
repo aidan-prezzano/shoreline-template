@@ -412,7 +412,7 @@ function Process() {
         <div className="number-marker">002 — Method</div>
         <h2>A process of <em>patience.</em></h2>
         <div className="section-intro">
-          Spending $200,000 on your home should feel unhurried and clear. Our method is built around reassurance: you will always know where we are, and what comes next.
+          A project of this scale should feel unhurried and clear. Our method is built around reassurance: you will always know where we are, and what comes next.
         </div>
       </div>
       <div className="process-grid">
@@ -764,6 +764,9 @@ function Nav({ onStartQuiz }) {
         </div>
       </nav>
       <div className={`nav-mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <button className="nav-mobile-close" onClick={closeMenu} aria-label="Close menu">
+          <span>Close</span><span className="x">×</span>
+        </button>
         <a href="#projects" className="nav-mobile-link" onClick={closeMenu}>Projects</a>
         <a href="#process" className="nav-mobile-link" onClick={closeMenu}>Process</a>
         <a href="#services" className="nav-mobile-link" onClick={closeMenu}>Services</a>
