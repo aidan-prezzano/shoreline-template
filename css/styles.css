@@ -387,7 +387,7 @@ body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1613977257365-aaae5a9817ff?w=1920&q=82&auto=format&fit=crop') center 50%/cover no-repeat;
+  background: url('../images/hero-pool.jpg') center 50%/cover no-repeat;
   z-index: 0;
 }
 
