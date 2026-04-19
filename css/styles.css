@@ -509,32 +509,7 @@ body[data-show-placeholder] .hero-video-tag { display: flex; }
   z-index: 2;
 }
 
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  font-family: 'Inter', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.25em;
-  color: rgba(241,236,227,0.6);
-  text-transform: uppercase;
-}
-.hero-scroll-indicator .line {
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(180deg, rgba(241,236,227,0.6), transparent);
-  animation: scroll-pulse 2.4s ease-in-out infinite;
-}
-@keyframes scroll-pulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
-  50% { opacity: 1; transform: scaleY(1); }
-}
+.hero-scroll-indicator { display: none; }
 
 /* ----- Sections ----- */
 
@@ -1402,7 +1377,8 @@ footer {
   .hero-video {
     background: linear-gradient(
       180deg,
-      transparent 0%,
+      rgba(0,0,0,0.45) 0%,
+      transparent 18%,
       transparent 50%,
       rgba(0,0,0,0.35) 72%,
       rgba(0,0,0,0.55) 100%

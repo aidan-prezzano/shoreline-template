@@ -610,11 +610,6 @@ function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builder
         Featured — Paradise Valley Residence<br/>
         Arizona / 2025
       </div>
-
-      <div className="hero-scroll-indicator">
-        <span>Scroll</span>
-        <span className="line" />
-      </div>
     </section>
   );
 }
