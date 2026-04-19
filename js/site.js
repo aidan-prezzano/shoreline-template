@@ -352,7 +352,7 @@ function Projects() {
         })}
       </div>
 
-      <div style={{ padding: '0 40px 80px', borderTop: '1px solid var(--line)', paddingTop: 40, textAlign: 'center' }}>
+      <div className="projects-cta" style={{ padding: '40px 40px 80px', borderTop: '1px solid var(--line)', textAlign: 'center' }}>
         <a href="project-courtyard-pool.html" className="btn-ghost">
           <span>View all projects</span><span className="arrow">→</span>
         </a>

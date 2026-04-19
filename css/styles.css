@@ -1367,13 +1367,16 @@ footer {
   .credentials { padding-top: 60px; padding-bottom: 60px; }
   .credentials-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
 
-  /* Testimonials — collapse 3-col grid to single column */
-  .testimonial-wrap { grid-template-columns: 1fr; min-height: auto; padding: 60px 20px; }
-  .t-counter { text-align: left; }
+  /* Section heads — cut desktop 120px top/80px bottom to mobile-friendly sizes */
+  .section-head { padding-top: 52px; padding-bottom: 36px; }
 
-  /* Project sidebar — collapse outer 2-col grid */
-  .project.variant-sidebar { grid-template-columns: 1fr; }
-  .project.variant-sidebar .project-frame-wrap { grid-column: 1; }
+  /* Projects — cut desktop 60px top / 120px bottom */
+  .project { padding-top: 28px; padding-bottom: 40px; }
+
+  /* Project sidebar — collapse outer 2-col grid, image above text */
+  .project.variant-sidebar { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 0; }
+  .project.variant-sidebar .project-frame-wrap { order: -1; margin-bottom: 24px; }
+  .project.variant-sidebar .project-sidebar { padding-bottom: 0; }
 
   /* Project asymmetric — full-width image, reset caption overlap */
   .project.variant-asymmetric .project-frame { width: 100%; }
@@ -1390,6 +1393,28 @@ footer {
   .project.variant-overlay .project-caption { grid-template-columns: 1fr !important; }
   .project.variant-overlay .project-caption > div:nth-child(2) { display: none; }
 
-  /* Quiz banner — reduce headline clamp minimum for mobile */
+  /* Process — remove min-height, cut padding, shrink title */
+  .process-section { padding-bottom: 52px; }
+  .process-step { padding: 28px 20px 36px; min-height: auto; }
+  .process-step .step-no { margin-bottom: 16px; }
+  .process-step .step-title { font-size: 30px; }
+
+  /* Testimonials — collapse 3-col grid, cut padding */
+  .testimonial-wrap { grid-template-columns: 1fr; min-height: auto; padding: 48px 20px; }
+  .t-counter { text-align: left; margin-top: 24px; }
+
+  /* Services — remove desktop asymmetric offsets and fixed min-heights */
+  .service { margin-top: 0 !important; min-height: auto !important; }
+  .services { padding-bottom: 60px; }
+  .service:nth-child(1) { min-height: auto !important; }
+
+  /* Projects CTA row */
+  .projects-cta { padding: 28px 20px 40px; }
+
+  /* Quiz banner — cut padding, reduce headline */
+  .quiz-banner { padding: 72px 20px; }
   .quiz-banner h2 { font-size: clamp(26px, 7vw, 36px); }
+
+  /* Footer */
+  footer { padding-top: 60px; padding-bottom: 28px; }
 }
