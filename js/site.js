@@ -389,7 +389,7 @@ const PROCESS_STEPS = [
   },
   {
     no: '04',
-    title: <>Beyond</>,
+    title: <>Care</>,
     duration: 'Ongoing',
     desc: 'A relationship, not a transaction. We return at six months, one year, and five years to ensure the pool is performing — and to make any refinements.',
     deliverables: ['Six-month visit', 'Annual service', 'Warranty program', 'Lifetime advisory'],
@@ -515,20 +515,6 @@ const SERVICES = [
     photo: 'https://images.pexels.com/photos/4066865/pexels-photo-4066865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
     phLabel: 'SERVICE — RENOVATIONS',
   },
-  {
-    no: '03',
-    title: <>Commercial &amp; <em>Hospitality</em></>,
-    desc: 'For architects, developers, and hospitality groups. Pools that anchor a property, not decorate it.',
-    bullets: [
-      'Hotel and resort pools',
-      'Private club commissions',
-      'Developer collaboration',
-      'Multi-project engagements',
-    ],
-    placeholder: 'dusk',
-    photo: 'https://images.pexels.com/photos/7974837/pexels-photo-7974837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
-    phLabel: 'SERVICE — COMMERCIAL',
-  },
 ];
 
 function Services({ onStartQuiz }) {
@@ -536,9 +522,9 @@ function Services({ onStartQuiz }) {
     <section id="services">
       <div className="section-head">
         <div className="number-marker">005 — Services</div>
-        <h2>Three ways we <em>work.</em></h2>
+        <h2>Two ways we <em>work.</em></h2>
         <div className="section-intro">
-          Most of what we do is ground-up design. We also take on renovations when the site and the client are the right fit, and commercial commissions for hospitality groups who share our standards.
+          Most of what we do is ground-up design. We also take on renovations when the site and the client are the right fit.
         </div>
       </div>
       <div className="services">
@@ -550,7 +536,7 @@ function Services({ onStartQuiz }) {
                   <div className="ph-label">{s.phLabel}</div>
                 </div>
               </div>
-              <div className="service-no">{s.no} / 03</div>
+              <div className="service-no">{s.no} / 02</div>
               <h4 className="service-title">{s.title}</h4>
               <p className="service-desc">{s.desc}</p>
               <ul className="service-list">
