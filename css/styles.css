@@ -1366,4 +1366,30 @@ footer {
   .stat { border-right: none; border-bottom: 1px solid rgba(241,236,227,0.18); padding-left: 0; padding-right: 0; }
   .credentials { padding-top: 60px; padding-bottom: 60px; }
   .credentials-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+
+  /* Testimonials — collapse 3-col grid to single column */
+  .testimonial-wrap { grid-template-columns: 1fr; min-height: auto; padding: 60px 20px; }
+  .t-counter { text-align: left; }
+
+  /* Project sidebar — collapse outer 2-col grid */
+  .project.variant-sidebar { grid-template-columns: 1fr; }
+  .project.variant-sidebar .project-frame-wrap { grid-column: 1; }
+
+  /* Project asymmetric — full-width image, reset caption overlap */
+  .project.variant-asymmetric .project-frame { width: 100%; }
+  .project.variant-asymmetric .project-caption {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+    margin-left: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  .project.variant-asymmetric .project-caption .project-desc { grid-column: 1; padding-top: 0; }
+
+  /* Project overlay — override inline gridTemplateColumns style */
+  .project.variant-overlay .project-caption { grid-template-columns: 1fr !important; }
+  .project.variant-overlay .project-caption > div:nth-child(2) { display: none; }
+
+  /* Quiz banner — reduce headline clamp minimum for mobile */
+  .quiz-banner h2 { font-size: clamp(26px, 7vw, 36px); }
 }
