@@ -1141,8 +1141,7 @@ section {
   margin-top: 18px;
   color: rgba(241,236,227,0.75);
 }
-.project.variant-overlay .project-caption { grid-template-columns: 180px 1fr; }
-.project.variant-overlay .project-caption > div:nth-child(2) { display: none; }
+.project.variant-overlay .project-caption { grid-template-columns: 180px 1fr 300px; }
 
 /* ----- Quiz CTA banner ----- */
 
@@ -1490,7 +1489,6 @@ footer {
 
   /* Project overlay — override inline gridTemplateColumns style */
   .project.variant-overlay .project-caption { grid-template-columns: 1fr !important; }
-  .project.variant-overlay .project-caption > div:nth-child(2) { display: none; }
 
   /* Process — remove min-height, cut padding, shrink title */
   .process-section { padding-bottom: 52px; }
