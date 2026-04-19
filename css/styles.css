@@ -468,9 +468,10 @@ body[data-show-placeholder] .hero-video-tag { display: flex; }
   letter-spacing: 0.3em;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(241,236,227,1);
+  color: #ffffff;
   margin-bottom: 28px;
   display: flex; align-items: center; gap: 14px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.7);
 }
 .hero-eyebrow::before {
   content: '';
@@ -484,6 +485,7 @@ body[data-show-placeholder] .hero-video-tag { display: flex; }
   line-height: 0.98;
   letter-spacing: -0.02em;
   margin-bottom: 32px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 .hero-title em {
   font-style: italic;
