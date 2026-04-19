@@ -468,14 +468,14 @@ body[data-show-placeholder] .hero-video-tag { display: flex; }
   letter-spacing: 0.3em;
   text-transform: uppercase;
   font-weight: 500;
-  color: rgba(241,236,227,0.7);
+  color: rgba(241,236,227,1);
   margin-bottom: 28px;
   display: flex; align-items: center; gap: 14px;
 }
 .hero-eyebrow::before {
   content: '';
   width: 40px; height: 1px;
-  background: rgba(241,236,227,0.5);
+  background: rgba(241,236,227,0.8);
 }
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
