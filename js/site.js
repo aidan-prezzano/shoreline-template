@@ -169,6 +169,7 @@ const PROJECTS = [
     desc: 'A twenty-four-meter rectangular pool set within an adobe courtyard, framed by a single olive tree. Hand-troweled plaster in bone. Architecture by Garcia-Ruiz.',
     meta: 'NEW BUILD · 2025 · AZ',
     placeholder: 'stone',
+    photo: 'https://images.pexels.com/photos/261160/pexels-photo-261160.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — PARADISE VALLEY RESIDENCE',
     variant: 'standard',
     slug: 'courtyard-pool',
@@ -180,6 +181,7 @@ const PROJECTS = [
     desc: 'A negative-edge pool cantilevered over the Pacific approach, oriented to the afternoon light. Limestone coping, thirty-foot infinity run.',
     meta: 'NEW BUILD · 2024 · CA',
     placeholder: 'water',
+    photo: 'https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — MONTECITO HILLSIDE',
     variant: 'sidebar',
     slug: 'montecito-hillside',
@@ -191,6 +193,7 @@ const PROJECTS = [
     desc: 'A restrained, symmetrical composition. Dark-plaster basin reads like water-within-water against the lake beyond. Integrated raised spa.',
     meta: 'NEW BUILD · 2024 · TX',
     placeholder: 'dusk',
+    photo: 'https://images.pexels.com/photos/26859048/pexels-photo-26859048.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — WESTLAKE ESTATE',
     variant: 'overlay',
     slug: 'westlake-estate',
@@ -202,6 +205,7 @@ const PROJECTS = [
     desc: 'A cold plunge, integrated spa, and shaded cabana set into existing sandstone. A meditation on quiet, not spectacle.',
     meta: 'RENOVATION · 2023 · AZ',
     placeholder: 'stone',
+    photo: 'https://images.pexels.com/photos/8134745/pexels-photo-8134745.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — SCOTTSDALE RENOVATION',
     variant: 'asymmetric',
     slug: 'scottsdale-plunge',
@@ -231,7 +235,7 @@ function ProjectSidebar({ p, total }) {
       <div className="project-frame-wrap">
         <div className="project-frame reveal">
           <Parallax speed={0.12}>
-            <div className={`ph ph-${p.placeholder}`}>
+            <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
               <div className="ph-label">{p.phLabel}</div>
             </div>
           </Parallax>
@@ -494,6 +498,7 @@ const SERVICES = [
       'Pool and surrounding landscape',
     ],
     placeholder: 'water',
+    photo: 'https://images.pexels.com/photos/31817156/pexels-photo-31817156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
     phLabel: 'SERVICE — NEW BUILDS',
   },
   {
@@ -507,6 +512,7 @@ const SERVICES = [
       'Landscape reset around the pool',
     ],
     placeholder: 'stone',
+    photo: 'https://images.pexels.com/photos/4066865/pexels-photo-4066865.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
     phLabel: 'SERVICE — RENOVATIONS',
   },
   {
@@ -520,6 +526,7 @@ const SERVICES = [
       'Multi-project engagements',
     ],
     placeholder: 'dusk',
+    photo: 'https://images.pexels.com/photos/7974837/pexels-photo-7974837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=1260&dpr=1',
     phLabel: 'SERVICE — COMMERCIAL',
   },
 ];
@@ -539,7 +546,7 @@ function Services({ onStartQuiz }) {
           {SERVICES.map(s => (
             <div key={s.no} className="service reveal">
               <div className="service-frame">
-                <div className={`ph ph-${s.placeholder}`}>
+                <div className={`ph ph-${s.placeholder}`} style={s.photo ? { backgroundImage: `url(${s.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
                   <div className="ph-label">{s.phLabel}</div>
                 </div>
               </div>
