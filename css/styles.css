@@ -1356,6 +1356,7 @@ footer {
 @media (max-width: 900px) {
   .nav { padding: 20px; grid-template-columns: 1fr auto; }
   .nav-left { display: none; }
+  .nav-right a[href^="tel"] { display: none; }
   .hero-copy { left: 20px; bottom: 40px; }
   .hero-mono, .hero-meta, .hero-bottom-right { display: none; }
   .section-head, .project, .credentials, .services, footer { padding-left: 20px; padding-right: 20px; }
@@ -1363,4 +1364,6 @@ footer {
   .project-caption { grid-template-columns: 1fr; gap: 20px; }
   .process-grid, .services-grid, .credentials-stats, .footer-top { grid-template-columns: 1fr; }
   .stat { border-right: none; border-bottom: 1px solid rgba(241,236,227,0.18); padding-left: 0; padding-right: 0; }
+  .credentials { padding-top: 60px; padding-bottom: 60px; }
+  .credentials-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
 }
