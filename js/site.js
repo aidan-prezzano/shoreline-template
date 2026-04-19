@@ -449,7 +449,7 @@ const CREDENTIALS_COPY = {
   },
   multigenerational: {
     heading: <>Three generations, <em>one standard.</em></>,
-    intro: 'Since 1954. A family firm, deliberately. The grandchildren of our founder still walk every project — because the trust of a $200,000 decision cannot be delegated to strangers.',
+    intro: 'Since 1954. A family firm, deliberately. The grandchildren of our founder still walk every project — because trust at this scale cannot be delegated to strangers.',
     stats: [
       { value: 3400, label: 'Pools built across four states' },
       { value: 72, label: 'Years in practice' },

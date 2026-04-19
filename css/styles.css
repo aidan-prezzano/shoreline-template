@@ -203,12 +203,12 @@ body {
 .ph-label {
   position: absolute;
   bottom: 14px; left: 16px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.75);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  mix-blend-mode: difference;
+  z-index: 2;
 }
 
 /* ----- Scroll reveal ----- */
@@ -988,6 +988,14 @@ section {
 }
 .service:nth-child(1) .service-frame { aspect-ratio: 4/4.2; }
 .service-frame .ph { width: 100%; height: 100%; }
+.service-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.42) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
 
 .service-no {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
