@@ -169,7 +169,7 @@ const PROJECTS = [
     desc: 'A twenty-four-meter rectangular pool set within an adobe courtyard, framed by a single olive tree. Hand-troweled plaster in bone. Architecture by Garcia-Ruiz.',
     meta: 'NEW BUILD · 2025 · AZ',
     placeholder: 'stone',
-    photo: 'https://images.pexels.com/photos/261160/pexels-photo-261160.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
+    photo: 'https://images.pexels.com/photos/15994062/pexels-photo-15994062.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — PARADISE VALLEY RESIDENCE',
     variant: 'standard',
     slug: 'courtyard-pool',
@@ -193,7 +193,7 @@ const PROJECTS = [
     desc: 'A restrained, symmetrical composition. Dark-plaster basin reads like water-within-water against the lake beyond. Integrated raised spa.',
     meta: 'NEW BUILD · 2024 · TX',
     placeholder: 'dusk',
-    photo: 'https://images.pexels.com/photos/26859048/pexels-photo-26859048.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
+    photo: 'https://images.pexels.com/photos/24807132/pexels-photo-24807132.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — WESTLAKE ESTATE',
     variant: 'overlay',
     slug: 'westlake-estate',
@@ -250,7 +250,7 @@ function ProjectOverlay({ p, total }) {
     <article className="project variant-overlay">
       <div className="project-frame reveal" style={{ position: 'relative' }}>
         <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
+          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center top' } : {}}>
             <div className="ph-label">{p.phLabel}</div>
             <div style={{
               position: 'absolute', inset: 0,
