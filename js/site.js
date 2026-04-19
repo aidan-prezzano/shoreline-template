@@ -184,7 +184,7 @@ const PROJECTS = [
     photo: 'https://images.pexels.com/photos/1268871/pexels-photo-1268871.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — PERDIDO KEY WATERFRONT',
     variant: 'sidebar',
-    slug: 'perdido-key-waterfront',
+    slug: 'gulf-view-vanishing-edge',
   },
   {
     no: '003',
@@ -196,7 +196,7 @@ const PROJECTS = [
     photo: 'https://images.pexels.com/photos/24807132/pexels-photo-24807132.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — SEAGROVE BEACH ESTATE',
     variant: 'overlay',
-    slug: 'seagrove-beach-estate',
+    slug: 'gulf-facing-pool-spa',
   },
   {
     no: '004',
@@ -208,7 +208,7 @@ const PROJECTS = [
     photo: 'https://images.pexels.com/photos/8134745/pexels-photo-8134745.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — GULF SHORES RENOVATION',
     variant: 'asymmetric',
-    slug: 'gulf-shores-plunge',
+    slug: 'dune-edge-plunge-cabana',
   },
 ];
 
@@ -228,7 +228,7 @@ function ProjectSidebar({ p, total }) {
           fontFamily: 'Inter, sans-serif', fontSize: 10, letterSpacing: '0.22em',
           textTransform: 'uppercase', color: 'var(--mute)', fontWeight: 500, marginBottom: 20,
         }}>{p.meta}</div>
-        <a href="project-courtyard-pool.html" className="btn-ghost" style={{ fontSize: 10.5 }}>
+        <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5 }}>
           <span>View project</span><span className="arrow">→</span>
         </a>
       </div>
@@ -270,6 +270,9 @@ function ProjectOverlay({ p, total }) {
         <div className="project-desc reveal">
           {p.desc}
           <span className="meta">{p.meta}</span>
+          <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 20 }}>
+            <span>View project</span><span className="arrow">→</span>
+          </a>
         </div>
       </div>
     </article>
@@ -297,6 +300,9 @@ function ProjectAsymmetric({ p, total }) {
         <div className="project-desc reveal">
           {p.desc}
           <span className="meta">{p.meta}</span>
+          <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 20 }}>
+            <span>View project</span><span className="arrow">→</span>
+          </a>
         </div>
       </div>
     </article>
@@ -324,6 +330,9 @@ function ProjectStandard({ p, total }) {
         <div className="project-desc reveal">
           {p.desc}
           <span className="meta">{p.meta}</span>
+          <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5, marginTop: 20 }}>
+            <span>View project</span><span className="arrow">→</span>
+          </a>
         </div>
       </div>
     </article>
@@ -354,7 +363,7 @@ function Projects() {
 
       <div className="projects-cta" style={{ padding: '40px 40px 80px', borderTop: '1px solid var(--line)', textAlign: 'center' }}>
         <a href="project-courtyard-pool.html" className="btn-ghost">
-          <span>View all projects</span><span className="arrow">→</span>
+          <span>Open case study</span><span className="arrow">→</span>
         </a>
       </div>
     </section>
