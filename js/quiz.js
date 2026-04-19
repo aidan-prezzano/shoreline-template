@@ -2,6 +2,16 @@
 
 const { useState, useEffect, useRef } = React;
 
+function useIsMobile(breakpoint = 900) {
+  const [mobile, setMobile] = useState(typeof window !== 'undefined' && window.innerWidth < breakpoint);
+  useEffect(() => {
+    const handler = () => setMobile(window.innerWidth < breakpoint);
+    window.addEventListener('resize', handler);
+    return () => window.removeEventListener('resize', handler);
+  }, [breakpoint]);
+  return mobile;
+}
+
 /* ============================================
    QUIZ — Full-screen takeover, one question at a time
    ============================================ */
@@ -126,7 +136,7 @@ function useCountUp(target, active, duration = 1400) {
   return value;
 }
 
-function BudgetSlider({ value, onChange }) {
+function BudgetSlider({ value, onChange, isMobile }) {
   const min = 50, max = 300;
   const pct = ((value - min) / (max - min)) * 100;
   const currentTier = [...BUDGET_TIERS].reverse().find(t => value >= t.min) || BUDGET_TIERS[0];
@@ -134,20 +144,20 @@ function BudgetSlider({ value, onChange }) {
 
   return (
     <div style={{ width: '100%', maxWidth: 640 }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 40 }}>
+      <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'baseline', justifyContent: 'space-between', marginBottom: 40, gap: isMobile ? 8 : 0 }}>
         <div>
           <div className="label" style={{ color: 'var(--mute)', marginBottom: 10 }}>Your investment</div>
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontWeight: 300,
-            fontSize: 72,
+            fontSize: isMobile ? 52 : 72,
             lineHeight: 1,
             letterSpacing: '-0.03em',
           }}>
             {display}
           </div>
         </div>
-        <div style={{ textAlign: 'right' }}>
+        <div style={{ textAlign: isMobile ? 'left' : 'right' }}>
           <div className="label" style={{ color: 'var(--mute)', marginBottom: 10 }}>Tier</div>
           <div style={{
             fontFamily: "'Cormorant Garamond', serif",
@@ -206,7 +216,7 @@ function BudgetSlider({ value, onChange }) {
 
       <div style={{
         marginTop: 48, paddingTop: 28, borderTop: '1px solid var(--line-soft)',
-        display: 'grid', gridTemplateColumns: '160px 1fr', gap: 28,
+        display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '160px 1fr', gap: isMobile ? 8 : 28,
       }}>
         <div className="label" style={{ color: 'var(--mute)', paddingTop: 4 }}>What this includes</div>
         <div style={{
@@ -260,7 +270,7 @@ function ContactStep({ values, onChange }) {
   );
 }
 
-function QuizOptions({ options, value, onChange, multi }) {
+function QuizOptions({ options, value, onChange, multi, isMobile }) {
   const isSelected = (v) => multi ? (value || []).includes(v) : value === v;
   const toggle = (v) => {
     if (multi) {
@@ -273,7 +283,7 @@ function QuizOptions({ options, value, onChange, multi }) {
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      gridTemplateColumns: isMobile ? '1fr' : 'repeat(2, minmax(0, 1fr))',
       gap: 1,
       background: 'var(--line)',
       border: '1px solid var(--line)',
@@ -335,20 +345,21 @@ function QuizOptions({ options, value, onChange, multi }) {
   );
 }
 
-function QuizComplete({ answers, onClose, onReset }) {
+function QuizComplete({ answers, onClose, onReset, isMobile }) {
   const tier = [...BUDGET_TIERS].reverse().find(t => answers.budget >= t.min) || BUDGET_TIERS[0];
   const countVal = useCountUp(answers.budget, true, 1600);
   const display = countVal >= 250 ? '$250k+' : `$${Math.round(countVal)}k`;
   return (
     <div style={{
-      padding: '80px 80px',
+      padding: isMobile ? '32px 20px' : '80px 80px',
       display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: 80,
+      gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr',
+      gap: isMobile ? 40 : 80,
       alignItems: 'center',
       height: '100%',
       maxWidth: 1400,
       margin: '0 auto',
+      overflowY: 'auto',
     }}>
       <div>
         <div className="label" style={{ color: 'var(--mute)', marginBottom: 40 }}>Received · Thank you</div>
@@ -503,6 +514,8 @@ function Quiz({ open, onClose }) {
     setAnswers({ budget: 150, features: [], contact: {} });
   };
 
+  const isMobile = useIsMobile();
+
   const flatAnswers = {
     ...answers,
     ...answers.contact,
@@ -512,7 +525,7 @@ function Quiz({ open, onClose }) {
     <div className={`quiz-overlay ${open ? 'open' : ''}`}>
       <div style={{
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        padding: '24px 40px',
+        padding: isMobile ? '16px 20px' : '24px 40px',
         borderBottom: '1px solid var(--line)',
       }}>
         <div className="logo" style={{ fontSize: 18 }}>SHORELINE</div>
@@ -548,44 +561,44 @@ function Quiz({ open, onClose }) {
 
       <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
         {complete ? (
-          <QuizComplete answers={flatAnswers} onClose={onClose} onReset={reset} />
+          <QuizComplete answers={flatAnswers} onClose={onClose} onReset={reset} isMobile={isMobile} />
         ) : (
           <div
             key={stepIdx}
             style={{
               display: 'grid',
-              gridTemplateColumns: '1.1fr 1fr',
+              gridTemplateColumns: isMobile ? '1fr' : '1.1fr 1fr',
               height: '100%',
               animation: `quiz-enter 700ms cubic-bezier(0.16, 1, 0.3, 1)`,
             }}
           >
             <div style={{
-              padding: '80px 80px',
+              padding: isMobile ? '28px 20px 20px' : '80px 80px',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: isMobile ? 'flex-start' : 'center',
               overflowY: 'auto',
             }}>
-              <div className="label" style={{ color: 'var(--mute)', marginBottom: 40 }}>
+              <div className="label" style={{ color: 'var(--mute)', marginBottom: isMobile ? 20 : 40 }}>
                 {step.eyebrow}
               </div>
               <h1 style={{
                 fontFamily: "'Cormorant Garamond', serif",
                 fontWeight: 300,
-                fontSize: 'clamp(36px, 4vw, 60px)',
-                lineHeight: 1,
+                fontSize: isMobile ? 'clamp(28px, 7vw, 40px)' : 'clamp(36px, 4vw, 60px)',
+                lineHeight: 1.05,
                 letterSpacing: '-0.02em',
-                marginBottom: 24,
+                marginBottom: isMobile ? 16 : 24,
                 maxWidth: 720,
               }}>
                 {step.question}
               </h1>
               <p style={{
                 fontFamily: "'Cormorant Garamond', serif",
-                fontSize: 19,
+                fontSize: isMobile ? 16 : 19,
                 lineHeight: 1.5,
                 color: 'var(--ink-soft)',
-                marginBottom: 56,
+                marginBottom: isMobile ? 28 : 56,
                 maxWidth: 540,
               }}>
                 {step.helper}
@@ -595,6 +608,7 @@ function Quiz({ open, onClose }) {
                 <BudgetSlider
                   value={answers.budget}
                   onChange={(v) => setAnswers(a => ({ ...a, budget: v }))}
+                  isMobile={isMobile}
                 />
               ) : step.contact ? (
                 <ContactStep
@@ -607,11 +621,12 @@ function Quiz({ open, onClose }) {
                   value={currentValue}
                   onChange={(v) => setAnswers(a => ({ ...a, [step.key]: v }))}
                   multi={step.multi}
+                  isMobile={isMobile}
                 />
               )}
             </div>
 
-            <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-3)' }}>
+            {!isMobile && <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--bg-3)' }}>
               <div
                 className={`ph ph-${step.placeholder}`}
                 style={{
@@ -635,7 +650,7 @@ function Quiz({ open, onClose }) {
               }}>
                 {String(stepIdx + 1).padStart(2, '0')}
               </div>
-            </div>
+            </div>}
           </div>
         )}
       </div>
@@ -643,7 +658,7 @@ function Quiz({ open, onClose }) {
       {!complete && (
         <div style={{
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          padding: '24px 40px',
+          padding: isMobile ? '16px 20px' : '24px 40px',
           borderTop: '1px solid var(--line)',
         }}>
           <button
