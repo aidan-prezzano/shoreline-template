@@ -586,7 +586,7 @@ function Hero({ onStartQuiz, headline = 'serene', eyebrow = 'Custom Pool Builder
         <span>Film Plate — Replace with client reel</span>
       </div>
       <div className="hero-mono">SHORELINE / FILM REEL — 2025 / AUTOPLAY MUTED</div>
-      <div className="hero-meta">EST. MMVII · CALIFORNIA</div>
+      <div className="hero-meta">EST. MMVII · FLORIDA</div>
 
       <div className="hero-copy">
         <div className="hero-eyebrow">{eyebrow}</div>
@@ -644,18 +644,18 @@ function Footer() {
         <div className="footer-brand">
           <div className="footer-brand-row">
             <div className="logo">SHORELINE</div>
-            <a href="tel:+14805550100" className="footer-mobile-phone">+1 480 555 0100</a>
+            <a href="tel:+18505550100" className="footer-mobile-phone">+1 850 555 0100</a>
           </div>
           <p className="footer-tag">
-            Quiet, considered pools for homeowners who notice the difference — built across the Southwest since 2007.
+            Quiet, considered pools for homeowners who notice the difference — built across the Gulf Coast since 2007.
           </p>
           <p className="footer-tag-short">
             Quiet, considered pools for homeowners who notice the difference.
           </p>
           <div className="footer-contact-line">
-            <span className="footer-address">Studio &nbsp;·&nbsp; 1424 Camelback Rd, Paradise Valley AZ</span>
+            <span className="footer-address">Studio &nbsp;·&nbsp; 36 Harbor Blvd, Destin FL</span>
             <span className="footer-contact-details">
-              <br/><a href="tel:+14805550100">+1 480 555 0100</a>
+              <br/><a href="tel:+18505550100">+1 850 555 0100</a>
               <br/><a href="mailto:studio@shoreline-pools.co">studio@shoreline-pools.co</a>
             </span>
           </div>
@@ -663,12 +663,12 @@ function Footer() {
         <div className="footer-col">
           <div className="footer-col-head">Service Areas</div>
           <ul>
-            <li>Phoenix &amp; Scottsdale, AZ</li>
-            <li>Paradise Valley, AZ</li>
-            <li>Montecito &amp; Santa Barbara, CA</li>
-            <li>Los Angeles, CA</li>
-            <li>Austin &amp; Westlake, TX</li>
-            <li>Naples &amp; Palm Beach, FL</li>
+            <li>Destin &amp; 30A, FL</li>
+            <li>Pensacola &amp; Gulf Breeze, FL</li>
+            <li>Panama City Beach, FL</li>
+            <li>Gulf Shores &amp; Orange Beach, AL</li>
+            <li>Santa Rosa Beach, FL</li>
+            <li>Naples &amp; Marco Island, FL</li>
           </ul>
         </div>
         <div className="footer-col">
@@ -700,7 +700,7 @@ function Footer() {
       <div className="footer-bottom">
         <div>
           <span>© 2026 Shoreline Pools, LLC</span>
-          <span className="footer-dsk">&nbsp;·&nbsp; ROC #284592 &nbsp;·&nbsp; CSLB #1054721</span>
+          <span className="footer-dsk">&nbsp;·&nbsp; FL CGC #1059874 &nbsp;·&nbsp; AL HBC #01829</span>
         </div>
         <div className="footer-credentials">
           <span>Licensed · Bonded · Insured</span>
