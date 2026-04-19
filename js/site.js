@@ -724,33 +724,52 @@ function Footer() {
 
 function Nav({ onStartQuiz }) {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  const closeMenu = () => setMenuOpen(false);
   return (
-    <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-left">
-        <a href="#projects" className="nav-link">Projects</a>
-        <a href="#process" className="nav-link">Process</a>
-        <a href="#services" className="nav-link">Services</a>
-      </div>
-      <a href="#top" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
-        SHORELINE
-      </a>
-      <div className="nav-right">
-        <a href="tel:+14805550100" className="nav-link">+1 480 555 0100</a>
+    <>
+      <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
+        <div className="nav-left">
+          <a href="#projects" className="nav-link">Projects</a>
+          <a href="#process" className="nav-link">Process</a>
+          <a href="#services" className="nav-link">Services</a>
+        </div>
         <button
-          onClick={onStartQuiz}
-          className="nav-link"
-          style={{ background: 'transparent', border: 'none', cursor: 'pointer', font: 'inherit', letterSpacing: 'inherit', textTransform: 'inherit' }}
+          className={`nav-hamburger ${menuOpen ? 'open' : ''}`}
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Menu"
         >
-          Begin brief →
+          <span /><span /><span />
+        </button>
+        <a href="#top" className="logo" style={{ textDecoration: 'none', color: 'inherit' }}>
+          SHORELINE
+        </a>
+        <div className="nav-right">
+          <a href="tel:+14805550100" className="nav-link">+1 480 555 0100</a>
+          <button
+            onClick={onStartQuiz}
+            className="nav-link"
+            style={{ background: 'transparent', border: 'none', cursor: 'pointer', font: 'inherit', letterSpacing: 'inherit', textTransform: 'inherit' }}
+          >
+            Begin brief →
+          </button>
+        </div>
+      </nav>
+      <div className={`nav-mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <a href="#projects" className="nav-mobile-link" onClick={closeMenu}>Projects</a>
+        <a href="#process" className="nav-mobile-link" onClick={closeMenu}>Process</a>
+        <a href="#services" className="nav-mobile-link" onClick={closeMenu}>Services</a>
+        <button className="nav-mobile-cta" onClick={() => { closeMenu(); onStartQuiz(); }}>
+          Begin your design brief →
         </button>
       </div>
-    </nav>
+    </>
   );
 }
 
