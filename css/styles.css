@@ -1363,9 +1363,11 @@ footer {
   .section-head { grid-template-columns: 1fr; gap: 24px; }
   .project-caption { grid-template-columns: 1fr; gap: 20px; }
   .process-grid, .services-grid, .credentials-stats, .footer-top { grid-template-columns: 1fr; }
-  .stat { border-right: none; border-bottom: 1px solid rgba(241,236,227,0.18); padding-left: 0; padding-right: 0; }
-  .credentials { padding-top: 60px; padding-bottom: 60px; }
-  .credentials-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 40px; }
+  .stat { border-right: none; border-bottom: 1px solid rgba(241,236,227,0.18); padding-left: 0; padding-right: 0; padding-top: 20px; padding-bottom: 20px; }
+  .stat-value { font-size: clamp(40px, 11vw, 64px); }
+  .credentials { padding-top: 52px; padding-bottom: 52px; }
+  .credentials-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 32px; }
+  .awards-bar { margin-top: 32px; padding-top: 24px; gap: 14px; }
 
   /* Section heads — cut desktop 120px top/80px bottom to mobile-friendly sizes */
   .section-head { padding-top: 52px; padding-bottom: 36px; }
@@ -1399,9 +1401,14 @@ footer {
   .process-step .step-no { margin-bottom: 16px; }
   .process-step .step-title { font-size: 30px; }
 
-  /* Testimonials — collapse 3-col grid, cut padding */
-  .testimonial-wrap { grid-template-columns: 1fr; min-height: auto; padding: 48px 20px; }
-  .t-counter { text-align: left; margin-top: 24px; }
+  /* Testimonials — collapse 3-col grid, cut padding, tighten gaps */
+  .testimonial-wrap { grid-template-columns: 1fr; min-height: auto; padding: 40px 20px; gap: 20px; }
+  .t-counter { text-align: left; margin-top: 8px; }
+  .t-nav { gap: 10px; }
+  /* Attribution — stack vertically, hide decorative dividers */
+  .testimonial-meta { flex-direction: column; gap: 4px; align-items: flex-start; }
+  .testimonial-meta .divider { display: none; }
+  .testimonial-quote { font-size: clamp(22px, 5.5vw, 32px); }
 
   /* Services — remove desktop asymmetric offsets and fixed min-heights */
   .service { margin-top: 0 !important; min-height: auto !important; }
