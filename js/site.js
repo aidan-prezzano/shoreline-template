@@ -228,7 +228,7 @@ function ProjectSidebar({ p, total }) {
           fontFamily: 'Inter, sans-serif', fontSize: 10, letterSpacing: '0.22em',
           textTransform: 'uppercase', color: 'var(--mute)', fontWeight: 500, marginBottom: 20,
         }}>{p.meta}</div>
-        <a href={`project-${p.slug}.html`} className="btn-ghost" style={{ fontSize: 10.5 }}>
+        <a href="project-courtyard-pool.html" className="btn-ghost" style={{ fontSize: 10.5 }}>
           <span>View project</span><span className="arrow">→</span>
         </a>
       </div>
