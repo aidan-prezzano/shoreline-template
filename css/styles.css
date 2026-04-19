@@ -1433,8 +1433,8 @@ footer {
   .project { padding-top: 28px; padding-bottom: 40px; }
 
   /* Project sidebar — collapse outer 2-col grid, image above text */
-  .project.variant-sidebar { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 0; }
-  .project.variant-sidebar .project-frame-wrap { order: -1; margin-bottom: 24px; }
+  .project.variant-sidebar { grid-template-columns: 1fr; display: flex; flex-direction: column; gap: 0; align-items: stretch; }
+  .project.variant-sidebar .project-frame-wrap { order: -1; margin-bottom: 24px; width: 100%; }
   .project.variant-sidebar .project-sidebar { padding-bottom: 0; }
 
   /* Uniform project image sizing across all variants on mobile */
