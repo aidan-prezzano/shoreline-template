@@ -250,7 +250,7 @@ function ProjectOverlay({ p, total }) {
     <article className="project variant-overlay">
       <div className="project-frame reveal" style={{ position: 'relative' }}>
         <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`}>
+          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
             <div className="ph-label">{p.phLabel}</div>
             <div style={{
               position: 'absolute', inset: 0,
@@ -281,7 +281,7 @@ function ProjectAsymmetric({ p, total }) {
     <article className="project variant-asymmetric">
       <div className="project-frame reveal">
         <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`}>
+          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
             <div className="ph-label">{p.phLabel}</div>
           </div>
         </Parallax>
@@ -308,7 +308,7 @@ function ProjectStandard({ p, total }) {
     <article className="project">
       <div className="project-frame reveal">
         <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`}>
+          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
             <div className="ph-label">{p.phLabel}</div>
           </div>
         </Parallax>
