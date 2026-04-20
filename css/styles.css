@@ -1551,3 +1551,15 @@ footer {
   .footer-bottom { padding-top: 14px; gap: 8px; }
   .footer-credentials { gap: 0; font-size: 9.5px; letter-spacing: 0.15em; }
 }
+
+/* ----- Desktop image height caps (≥ 901px) ----- */
+
+@media (min-width: 901px) {
+  /* Cap project images so they read as editorial cards, not viewport heroes */
+  .project-frame { max-height: 520px; }
+  .project.variant-overlay .project-frame { max-height: 480px; }
+
+  /* Cap service card images */
+  .service-frame { max-height: 560px; }
+  .service:nth-child(1) .service-frame { max-height: 560px; }
+}
