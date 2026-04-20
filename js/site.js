@@ -207,7 +207,6 @@ const PROJECTS = [
     placeholder: 'stone',
     photo: 'https://images.pexels.com/photos/8134745/pexels-photo-8134745.jpeg?auto=compress&cs=tinysrgb&w=1600&h=1000&dpr=1',
     phLabel: 'POOL — GULF SHORES RENOVATION',
-    variant: 'asymmetric',
     slug: 'dune-edge-plunge-cabana',
   },
 ];
@@ -250,7 +249,7 @@ function ProjectOverlay({ p, total }) {
     <article className="project variant-overlay">
       <div className="project-frame reveal">
         <Parallax speed={0.12}>
-          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center top' } : {}}>
+          <div className={`ph ph-${p.placeholder}`} style={p.photo ? { backgroundImage: `url(${p.photo})`, backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
             <div className="ph-label">{p.phLabel}</div>
           </div>
         </Parallax>
