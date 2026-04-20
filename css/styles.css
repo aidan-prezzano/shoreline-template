@@ -1076,9 +1076,10 @@ section {
 }
 
 /* Services layout variants (tweaks) */
-[data-services="two-up"] .services-grid { grid-template-columns: 1.2fr 1fr; }
+[data-services="two-up"] .services-grid { grid-template-columns: 1fr 1fr; }
 [data-services="two-up"] .service:nth-child(3) { display: none; }
-[data-services="two-up"] .service:nth-child(2) { margin-top: 60px; }
+[data-services="two-up"] .service:nth-child(2) { margin-top: 0; }
+[data-services="two-up"] .service { min-height: auto; }
 
 [data-services="single"] .services-grid { grid-template-columns: 1fr; }
 [data-services="single"] .service:nth-child(2),
@@ -1595,7 +1596,7 @@ footer {
 /* ----- Desktop image height caps (≥ 901px) ----- */
 
 @media (min-width: 901px) {
-  /* Cap service card images */
-  .service-frame { max-height: 560px; }
-  .service:nth-child(1) .service-frame { max-height: 560px; }
+  /* Cap service card images — small enough that both cards fit on one screen */
+  .service-frame { max-height: 300px; }
+  .service:nth-child(1) .service-frame { max-height: 300px; }
 }
