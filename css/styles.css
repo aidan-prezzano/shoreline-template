@@ -987,8 +987,8 @@ section {
   flex-direction: column;
   background: var(--panel);
   border: 1px solid var(--line);
-  padding: 36px 36px 40px;
-  min-height: 700px;
+  padding: 24px 24px 28px;
+  min-height: auto;
   transition: transform 600ms cubic-bezier(0.7,0,0.2,1), box-shadow 600ms ease, background 400ms ease;
 }
 .service:hover {
@@ -1004,7 +1004,7 @@ section {
 .service-frame {
   width: 100%;
   aspect-ratio: 4/5;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   overflow: hidden;
   position: relative;
 }
@@ -1596,7 +1596,7 @@ footer {
 /* ----- Desktop image height caps (≥ 901px) ----- */
 
 @media (min-width: 901px) {
-  /* Cap service card images — small enough that both cards fit on one screen */
-  .service-frame { max-height: 300px; }
-  .service:nth-child(1) .service-frame { max-height: 300px; }
+  /* Cap service card images — condensed to fit both cards on one screen */
+  .service-frame { max-height: 220px; }
+  .service:nth-child(1) .service-frame { max-height: 220px; }
 }
