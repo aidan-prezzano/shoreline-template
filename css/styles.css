@@ -1534,10 +1534,12 @@ footer {
   .testimonial-meta .divider { display: none; }
   .testimonial-quote { font-size: clamp(22px, 5.5vw, 32px); }
 
-  /* Services — remove desktop asymmetric offsets and fixed min-heights */
+  /* Services — collapse to single column, remove stagger */
   .service { margin-top: 0 !important; min-height: auto !important; }
   .services { padding-bottom: 60px; }
   .service:nth-child(1) { min-height: auto !important; }
+  [data-services="two-up"] .services-grid { grid-template-columns: 1fr; }
+  [data-services="two-up"] .service:nth-child(2) { margin-top: 0; }
 
   /* Projects CTA row */
   .projects-cta { padding: 28px 20px 40px; }
