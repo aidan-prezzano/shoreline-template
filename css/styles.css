@@ -1076,12 +1076,14 @@ section {
 }
 
 /* Services layout variants (tweaks) */
-[data-services="two-up"] .services-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+[data-services="two-up"] .services-grid { grid-template-columns: 1fr 1fr; align-items: start; }
 [data-services="two-up"] .service { display: flex; flex-direction: column; }
 [data-services="two-up"] .service-cta { margin-top: auto; }
 [data-services="two-up"] .service:nth-child(3) { display: none; }
 [data-services="two-up"] .service:nth-child(2) { margin-top: 0; }
 [data-services="two-up"] .service { min-height: auto; }
+[data-services="two-up"] .service:nth-child(1) .service-frame { aspect-ratio: 4/5; }
+[data-services="two-up"] .service:nth-child(1) .service-title { font-size: 40px; }
 
 [data-services="single"] .services-grid { grid-template-columns: 1fr; }
 [data-services="single"] .service:nth-child(2),

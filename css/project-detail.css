@@ -92,12 +92,15 @@ body { background: var(--bg); }
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300; font-size: 52px;
   line-height: 1.02; letter-spacing: -0.02em;
+  grid-column: 2 / 4;
+  margin-bottom: 0;
 }
 .pd-story h2 em { font-style: italic; }
 .pd-body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 19px; line-height: 1.6;
   color: var(--ink-soft);
+  grid-column: 2 / 4;
 }
 .pd-body p { margin-bottom: 24px; }
 .pd-body p.lede {
@@ -278,7 +281,8 @@ body { background: var(--bg); }
     gap: 24px;
     padding: 64px 20px;
   }
-  .pd-story h2 { font-size: clamp(26px, 7vw, 36px); }
+  .pd-story h2 { font-size: clamp(26px, 7vw, 36px); grid-column: auto; }
+  .pd-body { grid-column: auto; }
   .pd-body { font-size: 16px; line-height: 1.65; }
   .pd-body p { margin-bottom: 18px; }
   .pd-body p.lede { font-size: 19px; line-height: 1.45; margin-bottom: 24px; }
