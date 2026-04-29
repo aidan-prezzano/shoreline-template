@@ -423,7 +423,7 @@ const SERVICES = [
   },
 ];
 
-function Services({ onStartQuiz }) {
+function Services() {
   return (
     <section id="services">
       <div className="section-head">
@@ -453,16 +453,6 @@ function Services({ onStartQuiz }) {
                   </li>
                 ))}
               </ul>
-              <div className="service-cta">
-                <button
-                  type="button"
-                  onClick={onStartQuiz}
-                  className="btn-ghost"
-                  style={{ fontSize: 10.5, background: 'transparent', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit', letterSpacing: 'inherit', textTransform: 'inherit' }}
-                >
-                  <span>Inquire</span><span className="arrow">→</span>
-                </button>
-              </div>
             </div>
           ))}
         </div>
